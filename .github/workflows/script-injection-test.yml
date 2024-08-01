@@ -7,9 +7,10 @@ jobs:
   issues-job:
     runs-on: ubuntu-latest
     steps:
-    - name: script-injection-issue
+    - name: check-out repo
       uses: actions/checkout@v4.1.1
-    - env: 
+    - name: set intermediate env 
+      env: 
         issue_title: ${{ github.event.issue.title }}
       run: |
 #          issue_title="${{ github.event.issue.title }}"
